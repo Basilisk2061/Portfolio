@@ -22,12 +22,12 @@ export const portfolioData = {
     },
 
     skills: {
-        languages: ["Python", "C++", "JavaScript", "TypeScript", "Dart", "SQL"],
-        frameworks: ["Next.js", "React", "Flutter", "FastAPI", "Django", "Tailwind CSS"],
-        tools: ["Git & GitHub", "Docker", "VS Code", "Postman", "Figma"],
-        core: ["Data Structures", "Algorithms", "System Design", "OOP", "Database Management"],
-        soft: ["Technical Communication", "Project Management", "Team Leadership", "Critical Thinking"],
-        ai_ml: ["TensorFlow", "Keras", "OpenCV", "Scikit-learn", "NLP"]
+        "Languages": ["Python", "C++", "JavaScript", "TypeScript", "Dart", "SQL"],
+        "Frameworks": ["Next.js", "React", "Flutter", "FastAPI", "Django", "Tailwind CSS"],
+        "Tools": ["Git & GitHub", "Docker", "VS Code", "Postman", "Figma"],
+        "Core": ["Data Structures", "Algorithms", "System Design", "OOP", "Database Management"],
+        "Soft Skills": ["Technical Communication", "Project Management", "Team Leadership", "Critical Thinking"],
+        "AI/ML": ["TensorFlow", "Keras", "OpenCV", "Scikit-learn", "NLP"]
     },
 
     projects: [

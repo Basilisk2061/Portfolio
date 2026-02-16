@@ -48,7 +48,7 @@ export default function Skills() {
                             transition={{ delay: index * 0.1 }}
                             className="bg-neutral-800/20 backdrop-blur-md rounded-2xl p-6 border border-white/5 hover:border-white/20 transition-colors group"
                         >
-                            <h3 className="text-xl font-bold capitalize mb-6 text-white group-hover:text-neutral-200 transition-colors flex items-center gap-2">
+                            <h3 className="text-xl font-bold mb-6 text-white group-hover:text-neutral-200 transition-colors flex items-center gap-2">
                                 <span className="w-1.5 h-1.5 rounded-full bg-white" />
                                 {category}
                             </h3>
