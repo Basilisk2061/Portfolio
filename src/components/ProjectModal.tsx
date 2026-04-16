@@ -52,7 +52,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                         className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-neutral-900 border border-white/10 rounded-2xl shadow-2xl shadow-black/50 custom-scrollbar"
                     >
                         {/* Header Image Placeholder or Gradient */}
-                        <div className="h-48 bg-neutral-900 relative overflow-hidden border-b border-white/5">
+                        <div className="h-36 md:h-48 bg-neutral-900 relative overflow-hidden border-b border-white/5">
                             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.05),transparent_40%)]" />
                             <button
                                 onClick={onClose}
@@ -61,8 +61,8 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                                 <X className="w-6 h-6" />
                             </button>
 
-                            <div className="absolute bottom-6 left-6 md:left-8">
-                                <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">{project.title}</h2>
+                            <div className="absolute bottom-4 md:bottom-6 left-4 md:left-8 pr-14">
+                                <h2 className="text-2xl md:text-4xl font-bold text-white mb-2 leading-tight">{project.title}</h2>
                                 <div className="flex flex-wrap gap-2">
                                     {project.tags.map(tag => (
                                         <span key={tag} className="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-xs font-medium text-neutral-200 border border-white/10">
@@ -75,7 +75,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
 
                         <div className="p-6 md:p-8 space-y-8">
                             {/* Problem & Solution */}
-                            <div className="grid md:grid-cols-2 gap-8">
+                            <div className="grid md:grid-cols-2 gap-5 md:gap-8">
                                 <div className="space-y-4">
                                     <h3 className="flex items-center gap-2 text-xl font-semibold text-white">
                                         <Monitor className="text-neutral-400" /> The Problem

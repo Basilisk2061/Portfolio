@@ -17,10 +17,10 @@ export default function Education() {
     }));
 
     return (
-        <section id="education" className="py-28 border-t border-neutral-900 relative">
-            <div className="max-w-6xl mx-auto px-6">
+        <section id="education" className="py-16 md:py-28 border-t border-neutral-900 relative">
+            <div className="max-w-6xl mx-auto px-4 md:px-6">
                 {/* Journey Timeline */}
-                <div className="mb-24">
+                <div className="mb-16 md:mb-24">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ export default function Education() {
                     </h2>
 
                     {/* Featured Hackathon Wins - Horizontal */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 mb-12">
                         {achievements.featured.map((item, index) => {
                             const isGold = index === 0;
                             return (

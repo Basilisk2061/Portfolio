@@ -10,18 +10,18 @@ export default function Hero() {
     const { title, subtitle, name } = portfolioData.personalInfo;
 
     return (
-        <section id="home" className="relative h-screen flex items-center overflow-hidden">
+        <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-neutral-950/20 to-neutral-950 z-[1]" />
             <ParticleBackground />
 
-            <div className="relative z-10 max-w-6xl mx-auto px-6 w-full grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative z-10 max-w-6xl mx-auto px-5 w-full grid md:grid-cols-2 gap-8 md:gap-12 items-center pt-24 pb-16 md:pt-0 md:pb-0">
                 {/* Text Side */}
-                <div>
+                <div className="order-2 md:order-1 text-center md:text-left">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.1 }}
-                        className="text-5xl md:text-6xl font-bold tracking-tight mb-5 leading-[1.1]"
+                        className="text-4xl md:text-6xl font-bold tracking-tight mb-4 md:mb-5 leading-[1.1]"
                     >
                         <span className="text-white">{name}</span>
                     </motion.h1>
@@ -39,7 +39,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.35 }}
-                        className="text-sm text-neutral-500 max-w-md mb-10 leading-relaxed"
+                        className="text-sm text-neutral-500 max-w-md mb-8 md:mb-10 leading-relaxed mx-auto md:mx-0"
                     >
                         {subtitle}
                     </motion.p>
@@ -48,7 +48,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.5 }}
-                        className="flex flex-wrap gap-3"
+                        className="flex flex-wrap gap-3 justify-center md:justify-start"
                     >
                         <a
                             href="/Arya_Dahal_Resume.pdf"
@@ -76,9 +76,9 @@ export default function Hero() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.9, delay: 0.3 }}
-                    className="hidden md:flex justify-center items-center"
+                    className="order-1 md:order-2 flex justify-center items-center"
                 >
-                    <div className="relative w-72 h-72 lg:w-80 lg:h-80">
+                    <div className="relative w-40 h-40 md:w-72 md:h-72 lg:w-80 lg:h-80">
                         {/* Subtle ring behind the avatar */}
                         <div className="absolute inset-0 rounded-full border border-neutral-800/50" />
                         <div className="absolute -inset-3 rounded-full border border-neutral-800/20" />

@@ -11,9 +11,9 @@ export default function About() {
     const { summary, quickFacts } = portfolioData.about;
 
     return (
-        <section id="about" className="py-28 relative">
-            <div className="max-w-6xl mx-auto px-6">
-                <div className="grid md:grid-cols-5 gap-16 items-start">
+        <section id="about" className="py-16 md:py-28 relative">
+            <div className="max-w-6xl mx-auto px-4 md:px-6">
+                <div className="grid md:grid-cols-5 gap-8 md:gap-16 items-start">
                     {/* Text Side — takes 3 columns */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

@@ -32,9 +32,9 @@ export default function Projects() {
     };
 
     return (
-        <section id="projects" className="py-28 border-t border-neutral-900 relative">
+        <section id="projects" className="py-16 md:py-28 border-t border-neutral-900 relative">
 
-            <div className="max-w-6xl mx-auto px-6">
+            <div className="max-w-6xl mx-auto px-4 md:px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ export default function Projects() {
                         Selected Works
                     </h2>
 
-                    <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
+                    <div className="flex flex-col gap-4">
                         {/* Search Bar */}
                         <div className="relative w-full md:w-96 group">
                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500 group-focus-within:text-white transition-colors w-5 h-5" />
@@ -63,7 +63,7 @@ export default function Projects() {
                         </div>
 
                         {/* Filter Chips */}
-                        <div className="flex flex-wrap gap-2 items-center justify-end w-full">
+                        <div className="flex flex-wrap gap-2 items-center">
                             <button
                                 onClick={() => setActiveFilter(null)}
                                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${!activeFilter
