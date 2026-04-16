@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, GraduationCap, Award, BadgeCheck } from 'lucide-react';
+import { Calendar, GraduationCap, Award, BadgeCheck, ExternalLink } from 'lucide-react';
 import { portfolioData } from '@/data';
 
 export default function Education() {
@@ -108,9 +108,20 @@ export default function Education() {
                                             </h3>
                                             <span className="text-xs text-neutral-500 font-medium shrink-0 ml-2">{item.date}</span>
                                         </div>
-                                        <p className="text-neutral-400 text-sm leading-relaxed">
+                                        <p className="text-neutral-400 text-sm leading-relaxed mb-3">
                                             {item.description}
                                         </p>
+                                        {item.link && (
+                                            <a
+                                                href={item.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                onClick={(e) => e.stopPropagation()}
+                                                className="relative z-10 inline-flex items-center gap-1.5 text-xs font-medium text-neutral-400 hover:text-white transition-colors cursor-pointer"
+                                            >
+                                                View on LinkedIn <ExternalLink className="w-3 h-3" />
+                                            </a>
+                                        )}
                                     </div>
                                 </motion.div>
                             );

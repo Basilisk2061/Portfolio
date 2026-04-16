@@ -183,19 +183,22 @@ export const portfolioData = {
                 title: "1st Position – Asian Hacks",
                 description: "Secured first place at Asian Hacks, competing against teams across the region.",
                 image: "/achievements/Asian Hacks.jpg",
-                date: "2024"
+                link: "https://www.linkedin.com/posts/karanbista_asianhack2025-hackathonwin-ai-ugcPost-7373650336235843584-Lb2V",
+                date: "2025"
             },
             {
                 title: "1st Runner Up – ACIT TECH FEST Hackathon",
                 description: "Achieved first runner-up position at the ACIT TECH FEST Hackathon.",
                 image: "/achievements/ACME.jpg",
-                date: "2024"
+                link: "https://www.linkedin.com/posts/anandarimal_hackathon-teamwork-innovation-activity-7367221547155075072-Yx2M",
+                date: "2025"
             },
             {
                 title: "Fintech Track Winner – MBMC IdeaX Hackathon",
                 description: "Won the Fintech track at the MBMC IdeaX Hackathon for building an innovative financial solution.",
                 image: "/achievements/MBMC ideax.jpg",
-                date: "2024"
+                link: "https://www.linkedin.com/posts/mbm-ideax_winners-ideax2025-hackathon-activity-7409105532956934144-e6e-",
+                date: "2025"
             },
         ],
         others: [
