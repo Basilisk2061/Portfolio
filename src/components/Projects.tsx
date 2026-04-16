@@ -117,12 +117,21 @@ export default function Projects() {
                                 onClick={() => handleProjectClick(project)}
                                 className="group relative bg-neutral-900 border border-white/5 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full flex flex-col"
                             >
-                                {/* Image Placeholder */}
-                                <div className="h-48 bg-neutral-800 relative overflow-hidden group-hover:bg-neutral-800 transition-colors">
+                                {/* Project Header */}
+                                <div className="h-48 relative overflow-hidden bg-gradient-to-br from-neutral-800/80 via-neutral-900 to-neutral-950">
+                                    {/* Subtle grid pattern */}
+                                    <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M0 0h20v20H0z\' fill=\'none\' stroke=\'%23fff\' stroke-width=\'.5\'/%3E%3C/svg%3E")' }} />
+                                    {/* Corner accent */}
+                                    <div className="absolute top-0 right-0 w-24 h-24 bg-white/[0.03] rounded-full -translate-x-8 -translate-y-8" />
+                                    <div className="absolute bottom-0 left-0 w-16 h-16 bg-white/[0.02] rounded-full translate-x-[-30%] translate-y-[30%]" />
+                                    {/* Primary tag label */}
                                     <div className="absolute inset-0 flex items-center justify-center">
-                                        <Code2 className="w-12 h-12 text-neutral-700 group-hover:text-white transition-all duration-500 group-hover:scale-110" />
+                                        <span className="text-[2.5rem] font-black text-white/[0.04] uppercase tracking-widest select-none">
+                                            {project.tags[0]}
+                                        </span>
                                     </div>
-                                    <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-neutral-900 to-transparent opacity-50" />
+                                    {/* Bottom gradient fade */}
+                                    <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-neutral-900 to-transparent" />
 
                                     {/* Floating Tags */}
                                     <div className="absolute bottom-4 left-4 flex gap-2">

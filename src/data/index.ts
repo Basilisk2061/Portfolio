@@ -14,10 +14,9 @@ export const portfolioData = {
     about: {
         summary: "I am a Computer Engineering student driven by a passion for solving complex problems through technology. My expertise lies in full-stack development and Artificial Intelligence, where I bridge the gap between theoretical concepts and practical, high-performance applications. With a strong foundation in systems engineering and a collaborative mindset, I strive to build software that is not only functional but also scalable and user-centric.",
         quickFacts: [
-            { label: "Education", value: "B.E. Computer Engineering, NEC" },
+            { label: "Education", value: "B.E. Computer Engineering, nec" },
             { label: "Core Competencies", value: "Full-Stack Dev, AI/ML, System Design" },
-            { label: "Professional Focus", value: "Scalable Web Apps & Real-Time Systems" },
-            { label: "Tech Stack", value: "Python, Flutter, Next.js, TensorFlow" }
+            { label: "Professional Focus", value: "Scalable Web Apps & Real-Time Systems" }
         ]
     },
 
@@ -96,7 +95,7 @@ export const portfolioData = {
             title: "BhrastaBuster – Anti-Corruption Portal",
             repoUrl: "https://github.com/theaayushdev/BhrastaBusters",
             impact: "Enabled secure, anonymous civic engagement.",
-            tags: ["Django", "Flutter", "Security", "NLP"],
+            tags: ["Flask", "Flutter", "Security", "NLP"],
             description: "A secure platform empowering citizens to report corruption anonymously with automated credibility verification.",
             modalContent: {
                 problem: "The lack of secure, anonymous channels discourages citizens from reporting corruption incidents.",
@@ -107,7 +106,7 @@ export const portfolioData = {
                     "Secure media upload handling",
                     "Admin dashboard for case management"
                 ],
-                technical: "Backend secured with Django. Implemented NLP algorithms to analyze report text for consistency and credibility, filtering out potential spam.",
+                technical: "Backend secured with Flask. Implemented NLP algorithms to analyze report text for consistency and credibility, filtering out potential spam.",
                 learned: "Focused on security-first design principles, anonymous data handling, and the ethical application of AI in civic tech."
             }
         },

@@ -10,9 +10,6 @@ export default function Footer() {
                 <span>© {new Date().getFullYear()} Arya Dahal.</span>
                 <span className="hidden sm:inline">All rights reserved.</span>
             </div>
-            <div className="flex items-center justify-center gap-1.5 opacity-75 hover:opacity-100 transition-opacity">
-                Built with <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse-slow" /> using Next.js & Tailwind CSS.
-            </div>
         </footer>
     );
 }
