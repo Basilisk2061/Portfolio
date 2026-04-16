@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const jetbrains = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 
 export const metadata: Metadata = {
   title: 'Arya Dahal | Portfolio',
@@ -21,9 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark scroll-smooth">
-      <body className={`${inter.className} min-h-screen bg-neutral-950 text-white selection:bg-cyan-500/30 selection:text-cyan-200 antialiased`}>
+      <body className={`${inter.variable} ${jetbrains.variable} font-sans min-h-screen bg-neutral-950 text-white antialiased`}>
         {children}
       </body>
     </html>
   );
 }
+

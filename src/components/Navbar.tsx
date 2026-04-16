@@ -64,12 +64,18 @@ export default function Navbar() {
         <motion.nav
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-4 bg-slate-950/80 backdrop-blur-md border-b border-white/5' : 'py-6 bg-transparent'}`}
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-3 bg-neutral-950/90 backdrop-blur-sm border-b border-neutral-800/50' : 'py-5 bg-transparent'}`}
         >
             <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-                <Link href="#" className="font-bold text-xl tracking-tighter flex items-center gap-2 group">
-                    <Terminal className="w-6 h-6 text-white group-hover:text-neutral-300 transition-colors" />
-                    <span className="text-white group-hover:text-neutral-300 transition-colors">Arya</span>
+                <Link 
+                    href="#home" 
+                    onClick={(e) => {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="font-bold text-xl tracking-tighter flex items-center group"
+                >
+                    <span className="text-white group-hover:text-neutral-400 transition-colors">Arya</span>
                 </Link>
 
                 {/* Desktop Nav */}
@@ -90,7 +96,7 @@ export default function Navbar() {
                         href="/Arya_Dahal_Resume.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-5 py-2 bg-white text-black text-sm font-medium rounded-full hover:bg-neutral-200 transition-colors"
+                        className="px-4 py-1.5 bg-white text-black text-xs font-semibold rounded-full hover:bg-neutral-200 transition-colors"
                     >
                         Resume
                     </a>
@@ -112,7 +118,7 @@ export default function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-black/95 backdrop-blur-lg border-b border-white/10 overflow-hidden"
+                        className="md:hidden bg-neutral-950/98 border-b border-neutral-800/50 overflow-hidden"
                     >
                         <div className="flex flex-col p-6 gap-4">
                             {navItems.map((item) => (

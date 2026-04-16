@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { usePortfolio } from '@/context/PortfolioContext'; // Use shared context
+import { usePortfolio } from '@/context/PortfolioContext';
 import { portfolioData } from '@/data';
 
 export default function Skills() {
@@ -17,48 +17,47 @@ export default function Skills() {
     };
 
     return (
-        <section id="skills" className="py-24 bg-neutral-900/40 relative">
-            <div className="absolute inset-0 bg-dotted-pattern opacity-[0.03]" />
-            <div className="max-w-7xl mx-auto px-6">
+        <section id="skills" className="py-28 border-t border-neutral-900 relative">
+            <div className="max-w-6xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="mb-14"
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
+                    <div className="flex items-center gap-3 mb-6">
+                        <span className="w-8 h-px bg-neutral-600" />
+                        <span className="text-xs text-neutral-500 font-semibold uppercase tracking-widest">Skills</span>
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
                         Technical Arsenal
                     </h2>
-                    <p className="text-neutral-400 max-w-2xl mx-auto">
-                        My stack for building scalable, high-performance applications.
-                        <br />
-                        <span className="text-sm text-neutral-500 mt-2 block">
-                            (Click a skill to filter projects)
-                        </span>
+                    <p className="text-neutral-500 text-sm">
+                        Click a skill to filter related projects.
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {categories.map((category, index) => (
                         <motion.div
                             key={category}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="bg-neutral-800/20 backdrop-blur-md rounded-2xl p-6 border border-white/5 hover:border-white/20 transition-colors group"
+                            transition={{ delay: index * 0.07 }}
+                            className="bg-neutral-900/50 rounded-xl p-6 border border-neutral-800/60 hover:border-neutral-700 transition-colors"
                         >
-                            <h3 className="text-xl font-bold mb-6 text-white group-hover:text-neutral-200 transition-colors flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-white" />
+                            <h3 className="text-sm font-bold mb-5 text-neutral-300 uppercase tracking-wider flex items-center gap-2">
+                                <span className="w-1 h-1 rounded-full bg-neutral-500" />
                                 {category}
                             </h3>
 
-                            <div className="flex flex-wrap gap-3">
+                            <div className="flex flex-wrap gap-2">
                                 {skills[category].map((skill) => (
                                     <button
                                         key={skill}
                                         onClick={() => handleSkillClick(skill)}
-                                        className="px-3 py-1.5 text-sm rounded-md bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 text-neutral-300 hover:text-white transition-all duration-300"
+                                        className="px-3 py-1.5 text-xs rounded-md bg-neutral-800/80 border border-neutral-800 hover:border-neutral-600 text-neutral-400 hover:text-white transition-all"
                                     >
                                         {skill}
                                     </button>

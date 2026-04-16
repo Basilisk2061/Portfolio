@@ -32,17 +32,20 @@ export default function Projects() {
     };
 
     return (
-        <section id="projects" className="py-24 bg-neutral-950 relative">
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-900 to-transparent opacity-50" />
+        <section id="projects" className="py-28 border-t border-neutral-900 relative">
 
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-6xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     className="mb-12"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white tracking-tight">
+                    <div className="flex items-center gap-3 mb-6">
+                        <span className="w-8 h-px bg-neutral-600" />
+                        <span className="text-xs text-neutral-500 font-semibold uppercase tracking-widest">Projects</span>
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
                         Selected Works
                     </h2>
 
@@ -115,54 +118,49 @@ export default function Projects() {
                                 exit={{ opacity: 0, scale: 0.95 }}
                                 transition={{ duration: 0.3 }}
                                 onClick={() => handleProjectClick(project)}
-                                className="group relative bg-neutral-900 border border-white/5 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full flex flex-col"
+                                className="group relative bg-neutral-900/60 border border-neutral-800/60 rounded-xl overflow-hidden hover:border-neutral-700 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer h-full flex flex-col"
                             >
                                 {/* Project Header */}
-                                <div className="h-48 relative overflow-hidden bg-gradient-to-br from-neutral-800/80 via-neutral-900 to-neutral-950">
-                                    {/* Subtle grid pattern */}
-                                    <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M0 0h20v20H0z\' fill=\'none\' stroke=\'%23fff\' stroke-width=\'.5\'/%3E%3C/svg%3E")' }} />
-                                    {/* Corner accent */}
-                                    <div className="absolute top-0 right-0 w-24 h-24 bg-white/[0.03] rounded-full -translate-x-8 -translate-y-8" />
-                                    <div className="absolute bottom-0 left-0 w-16 h-16 bg-white/[0.02] rounded-full translate-x-[-30%] translate-y-[30%]" />
-                                    {/* Primary tag label */}
+                                <div className="h-40 relative overflow-hidden bg-neutral-900">
+                                    {/* Primary tag watermark */}
                                     <div className="absolute inset-0 flex items-center justify-center">
-                                        <span className="text-[2.5rem] font-black text-white/[0.04] uppercase tracking-widest select-none">
+                                        <span className="text-[2rem] font-bold text-white/[0.03] uppercase tracking-[0.2em] select-none">
                                             {project.tags[0]}
                                         </span>
                                     </div>
-                                    {/* Bottom gradient fade */}
-                                    <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-neutral-900 to-transparent" />
+                                    {/* Bottom fade */}
+                                    <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-neutral-900/80 to-transparent" />
 
-                                    {/* Floating Tags */}
-                                    <div className="absolute bottom-4 left-4 flex gap-2">
+                                    {/* Tags */}
+                                    <div className="absolute bottom-3 left-4 flex gap-1.5">
                                         {project.tags.slice(0, 2).map((tag, i) => (
-                                            <span key={i} className="text-xs font-semibold px-2 py-1 rounded-md bg-black/50 text-neutral-300 backdrop-blur-sm border border-white/5">
+                                            <span key={i} className="text-[10px] font-medium px-2 py-1 rounded bg-neutral-800 text-neutral-400 border border-neutral-700/50">
                                                 {tag}
                                             </span>
                                         ))}
                                         {project.tags.length > 2 && (
-                                            <span className="text-xs font-semibold px-2 py-1 rounded-md bg-black/50 text-neutral-300 backdrop-blur-sm border border-white/5">
+                                            <span className="text-[10px] font-medium px-2 py-1 rounded bg-neutral-800 text-neutral-500 border border-neutral-700/50">
                                                 +{project.tags.length - 2}
                                             </span>
                                         )}
                                     </div>
                                 </div>
 
-                                <div className="p-6 flex-grow flex flex-col">
-                                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-white transition-colors flex items-center gap-2">
+                                <div className="p-5 flex-grow flex flex-col">
+                                    <h3 className="text-base font-semibold text-white mb-2 flex items-center gap-1.5">
                                         {project.title}
-                                        <ChevronRight className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all text-neutral-400" />
+                                        <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all text-neutral-500" />
                                     </h3>
-                                    <p className="text-neutral-400 text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
+                                    <p className="text-neutral-500 text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
                                         {project.description}
                                     </p>
 
-                                    <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between text-xs font-medium text-neutral-500">
-                                        <span className="flex items-center gap-1.5">
-                                            <Layers className="w-3.5 h-3.5" />
+                                    <div className="mt-auto pt-3 border-t border-neutral-800/60 flex items-center justify-between text-xs text-neutral-600">
+                                        <span className="flex items-center gap-1.5 font-medium">
+                                            <Layers className="w-3 h-3" />
                                             {project.tags[0]}
                                         </span>
-                                        <span className="group-hover:text-white transition-colors">View Details →</span>
+                                        <span className="group-hover:text-neutral-300 transition-colors font-medium">Details →</span>
                                     </div>
                                 </div>
                             </motion.div>

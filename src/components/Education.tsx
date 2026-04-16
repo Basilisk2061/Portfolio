@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, GraduationCap, Award, BadgeCheck, ExternalLink } from 'lucide-react';
+import { Calendar, GraduationCap, BadgeCheck, ExternalLink } from 'lucide-react';
 import { portfolioData } from '@/data';
 
 export default function Education() {
@@ -17,48 +17,48 @@ export default function Education() {
     }));
 
     return (
-        <section id="education" className="py-24 bg-neutral-900/40 relative">
-            <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]" />
-
+        <section id="education" className="py-28 border-t border-neutral-900 relative">
             <div className="max-w-6xl mx-auto px-6">
                 {/* Journey Timeline */}
-                <div className="mb-20">
+                <div className="mb-24">
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         className="mb-12"
                     >
-                        <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white flex items-center gap-3">
-                            <span className="bg-white w-2 h-12 rounded-full" />
+                        <div className="flex items-center gap-3 mb-6">
+                            <span className="w-8 h-px bg-neutral-600" />
+                            <span className="text-xs text-neutral-500 font-semibold uppercase tracking-widest">Experience</span>
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-bold text-white">
                             Journey
                         </h2>
                     </motion.div>
 
-                    <div className="relative border-l-2 border-neutral-800 ml-3 space-y-12">
+                    <div className="relative border-l border-neutral-800 ml-2 space-y-10">
                         {timelineItems.map((item, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, x: -20 }}
+                                initial={{ opacity: 0, x: -15 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
                                 className="relative pl-8"
                             >
-                                <span className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-neutral-900 border-2 border-white" />
+                                <span className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-neutral-800 border-2 border-neutral-500" />
 
-                                <h3 className="text-xl font-bold text-white mb-1">
+                                <h3 className="text-lg font-semibold text-white mb-1">
                                     {item.title}
                                 </h3>
-                                <div className="flex items-center gap-2 text-sm text-neutral-400 mb-2 font-medium">
-                                    <item.icon className="w-4 h-4" />
+                                <div className="flex items-center gap-2 text-sm text-neutral-500 mb-2">
+                                    <item.icon className="w-3.5 h-3.5" />
                                     {item.subtitle}
                                 </div>
-                                <div className="text-xs text-neutral-500 mb-3 bg-neutral-800/50 px-2 py-1 inline-block rounded border border-white/5">
-                                    <Calendar className="w-3 h-3 inline mr-1" />
+                                <span className="text-xs text-neutral-600 font-medium">
                                     {item.date}
-                                </div>
-                                <p className="text-neutral-400 leading-relaxed text-sm">
+                                </span>
+                                <p className="text-neutral-400 leading-relaxed text-sm mt-2">
                                     {item.description}
                                 </p>
                             </motion.div>
@@ -72,13 +72,16 @@ export default function Education() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold mb-10 text-white flex items-center gap-3">
-                        <Award className="text-white w-8 h-8" />
+                    <div className="flex items-center gap-3 mb-6">
+                        <span className="w-8 h-px bg-neutral-600" />
+                        <span className="text-xs text-neutral-500 font-semibold uppercase tracking-widest">Recognition</span>
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-10 text-white">
                         Achievements
                     </h2>
 
                     {/* Featured Hackathon Wins - Horizontal */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
                         {achievements.featured.map((item, index) => {
                             const isGold = index === 0;
                             return (
@@ -88,27 +91,27 @@ export default function Education() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
-                                    className={`group overflow-hidden rounded-2xl bg-neutral-800/20 transition-all ${
+                                    className={`group overflow-hidden rounded-xl bg-neutral-900/60 transition-all ${
                                         isGold
-                                            ? 'border border-amber-500/40 shadow-[0_0_20px_rgba(245,158,11,0.08)] hover:border-amber-400/60 hover:shadow-[0_0_30px_rgba(245,158,11,0.15)]'
-                                            : 'border border-white/5 hover:border-white/20'
+                                            ? 'border border-amber-600/30 hover:border-amber-500/50'
+                                            : 'border border-neutral-800/60 hover:border-neutral-700'
                                     }`}
                                 >
                                     <div className="aspect-video w-full overflow-hidden">
                                         <img
                                             src={item.image}
                                             alt={item.title}
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                            className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
                                         />
                                     </div>
-                                    <div className="p-5">
-                                        <div className="flex justify-between items-start mb-2">
-                                            <h3 className={`text-base font-bold ${isGold ? 'text-amber-200' : 'text-white'}`}>
+                                    <div className="p-4">
+                                        <div className="flex justify-between items-start mb-1.5">
+                                            <h3 className={`text-sm font-semibold ${isGold ? 'text-amber-200' : 'text-white'}`}>
                                                 {item.title}
                                             </h3>
-                                            <span className="text-xs text-neutral-500 font-medium shrink-0 ml-2">{item.date}</span>
+                                            <span className="text-[10px] text-neutral-600 font-medium shrink-0 ml-2">{item.date}</span>
                                         </div>
-                                        <p className="text-neutral-400 text-sm leading-relaxed mb-3">
+                                        <p className="text-neutral-500 text-xs leading-relaxed mb-3">
                                             {item.description}
                                         </p>
                                         {item.link && (
@@ -117,9 +120,9 @@ export default function Education() {
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 onClick={(e) => e.stopPropagation()}
-                                                className="relative z-10 inline-flex items-center gap-1.5 text-xs font-medium text-neutral-400 hover:text-white transition-colors cursor-pointer"
+                                                className="relative z-10 inline-flex items-center gap-1 text-[11px] font-medium text-neutral-500 hover:text-white transition-colors cursor-pointer"
                                             >
-                                                View on LinkedIn <ExternalLink className="w-3 h-3" />
+                                                LinkedIn <ExternalLink className="w-3 h-3" />
                                             </a>
                                         )}
                                     </div>
@@ -129,19 +132,19 @@ export default function Education() {
                     </div>
 
                     {/* Certifications & Other */}
-                    <h4 className="text-neutral-400 text-sm font-bold uppercase tracking-wider mb-4">Certifications & More</h4>
-                    <div className="grid md:grid-cols-3 gap-3">
+                    <h4 className="text-neutral-600 text-xs font-semibold uppercase tracking-widest mb-4">Certifications & More</h4>
+                    <div className="grid md:grid-cols-2 gap-3">
                         {achievements.others.map((item, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.05 + 0.3 }}
-                                className="p-3 rounded-lg bg-neutral-800/30 border border-white/5 flex items-start gap-3"
+                                transition={{ delay: index * 0.05 + 0.2 }}
+                                className="p-3 rounded-lg bg-neutral-900/40 border border-neutral-800/40 flex items-start gap-3"
                             >
-                                <BadgeCheck className="w-4 h-4 text-neutral-500 mt-0.5 shrink-0" />
-                                <p className="text-neutral-300 text-sm leading-snug">{item}</p>
+                                <BadgeCheck className="w-3.5 h-3.5 text-neutral-600 mt-0.5 shrink-0" />
+                                <p className="text-neutral-400 text-sm leading-snug">{item}</p>
                             </motion.div>
                         ))}
                     </div>
