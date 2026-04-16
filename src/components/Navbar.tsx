@@ -13,9 +13,13 @@ const navItems = [
     { name: 'Contact', href: '#contact', icon: Mail },
 ];
 
+// Extract section IDs from nav hrefs (strip the '#')
+const sectionIds = navItems.map((item) => item.href.slice(1));
+
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState<string>('');
 
     useEffect(() => {
         const handleScroll = () => {
@@ -24,6 +28,37 @@ export default function Navbar() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    // Intersection Observer to track which section is currently in view
+    useEffect(() => {
+        const observerOptions: IntersectionObserverInit = {
+            root: null,
+            // Negative top margin pushes the "top" of the detection zone down (to account for navbar),
+            // and negative bottom margin shrinks the detection zone from below so only the
+            // section occupying roughly the upper-middle portion of the viewport triggers.
+            rootMargin: '-20% 0px -50% 0px',
+            threshold: 0,
+        };
+
+        const observerCallback: IntersectionObserverCallback = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        sectionIds.forEach((id) => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+
+        return () => observer.disconnect();
+    }, []);
+
+    const isActive = (href: string) => activeSection === href.slice(1);
 
     return (
         <motion.nav
@@ -43,10 +78,12 @@ export default function Navbar() {
                         <Link
                             key={item.name}
                             href={item.href}
-                            className="text-neutral-400 hover:text-white transition-colors text-sm font-medium flex items-center gap-2 relative group"
+                            className={`hover:text-white transition-colors text-sm font-medium flex items-center gap-2 relative group ${isActive(item.href) ? 'text-white' : 'text-neutral-400'}`}
                         >
                             <span>{item.name}</span>
-                            <span className="absolute -bottom-1 left-0 w-0 h-px bg-white group-hover:w-full transition-all duration-300" />
+                            <span
+                                className={`absolute -bottom-1 left-0 h-px bg-white transition-all duration-300 ${isActive(item.href) ? 'w-full' : 'w-0 group-hover:w-full'}`}
+                            />
                         </Link>
                     ))}
                     <a
@@ -83,9 +120,9 @@ export default function Navbar() {
                                     key={item.name}
                                     href={item.href}
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="flex items-center gap-3 text-lg text-neutral-400 hover:text-white transition-colors"
+                                    className={`flex items-center gap-3 text-lg hover:text-white transition-colors ${isActive(item.href) ? 'text-white' : 'text-neutral-400'}`}
                                 >
-                                    <item.icon className="w-5 h-5" />
+                                    <item.icon className={`w-5 h-5 ${isActive(item.href) ? 'text-white' : ''}`} />
                                     {item.name}
                                 </Link>
                             ))}
