@@ -22,12 +22,12 @@ export const portfolioData = {
     },
 
     skills: {
-        "Languages": ["Python", "C++", "JavaScript", "TypeScript", "Dart", "SQL"],
-        "Frameworks": ["Next.js", "React", "Flutter", "FastAPI", "Django", "Tailwind CSS"],
-        "Tools": ["Git & GitHub", "Docker", "VS Code", "Postman", "Figma"],
+        "Languages": ["Python", "C/C++", "JavaScript", "SQL"],
+        "Frameworks": ["FastAPI", "Django", "Flask", "Flutter"],
+        "Tools": ["Git & GitHub", "Docker", "VS Code", "Postman"],
         "Core": ["Data Structures", "Algorithms", "System Design", "OOP", "Database Management"],
         "Soft Skills": ["Technical Communication", "Project Management", "Team Leadership", "Critical Thinking"],
-        "AI/ML": ["TensorFlow", "Keras", "OpenCV", "Scikit-learn", "NLP"]
+        "AI/ML": ["TensorFlow", "OpenCV", "Scikit-learn", "NLP"]
     },
 
     projects: [
@@ -178,10 +178,30 @@ export const portfolioData = {
         }
     ],
 
-    achievements: [
-        "Winner, Regional Hackathon (2024) - Recognized for innovative use of AI in agriculture.",
-        "Finalist, National Code Camp - Top 10 among 500+ participants.",
-        "Certified Specialist: 'Python for Everybody' (Coursera).",
-        "Open Source Contributor - Active maintenance of student developer tools."
-    ]
+    achievements: {
+        featured: [
+            {
+                title: "1st Position – Asian Hacks",
+                description: "Secured first place at Asian Hacks, competing against teams across the region.",
+                image: "/achievements/Asian Hacks.jpg",
+                date: "2024"
+            },
+            {
+                title: "1st Runner Up – ACIT TECH FEST Hackathon",
+                description: "Achieved first runner-up position at the ACIT TECH FEST Hackathon.",
+                image: "/achievements/ACME.jpg",
+                date: "2024"
+            },
+            {
+                title: "Fintech Track Winner – MBMC IdeaX Hackathon",
+                description: "Won the Fintech track at the MBMC IdeaX Hackathon for building an innovative financial solution.",
+                image: "/achievements/MBMC ideax.jpg",
+                date: "2024"
+            },
+        ],
+        others: [
+            "Certified: 'Python for Everybody' (Coursera)",
+            "Event Handler Coordinator – Cybersecurity Symposium 2026 and Techsprint Hackathon",
+        ]
+    }
 };
